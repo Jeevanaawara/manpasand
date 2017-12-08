@@ -9,9 +9,7 @@ class Sign extends CI_Controller {
 	}
 
 	public function in(){
-		$result = $this->signModel->in("admin", "admin");
-		echo json_encode($result, 4);
-		// $this->load->view('in',$data);
+		$this->load->view('in');
 	}
 
 	public function up(){
