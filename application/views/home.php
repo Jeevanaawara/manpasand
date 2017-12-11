@@ -20,7 +20,7 @@
         <!-- Main content -->
         <section class="content">
           <?php if($user && $user->role=='ADMIN') { ?>
-          <div class="row">
+          <div class="row m-y">
             <div class="col-md-12">
               <button class="btn btn-primary pull-right">Add Category</button>
             </div>
@@ -29,9 +29,21 @@
           <div class="row">
             <?php foreach ($categories as $category) {?>
             <div class="col-md-3">
-              <a href='<?php echo base_url("index.php/home/category/$category->id") ?>'>
-                <?php echo $category->title?>
-              </a>
+              <div class="box box-widget widget-product">
+                <div class="widget-product-header bg-black" style="background: url('') center center;">
+                </div>
+                <div class="box-footer no-top-p">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h4>
+                        <a href='<?php echo base_url("index.php/home/category/$category->id") ?>'>
+                          <?php echo $category->title?>
+                        </a>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <?php }?>          
           </div>

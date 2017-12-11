@@ -4,6 +4,7 @@ class Home extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('categoryModel');
+		$this->load->model('itemModel');
 		$this->load->helper(array('url'));
 		$this->load->library(array('session'));
 	}
@@ -18,6 +19,7 @@ class Home extends CI_Controller{
 		$data['user'] = $this->session->userdata('user');
 		$data['selectedCategoryId'] = $id;
 		$data['category'] = $this->categoryModel->get($id);
+		$data['category']->items = $this->itemModel->getAll($id);
 		$this->load->view('category', $data);	
 	}
 

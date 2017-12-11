@@ -2984,6 +2984,12 @@ table.text-center th {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
+.widget-product .widget-product-header {
+  padding: 20px;
+  height: 200px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
 .widget-user .widget-user-username {
   margin-top: 0;
   margin-bottom: 5px;
@@ -3005,9 +3011,13 @@ table.text-center th {
   height: auto;
   border: 3px solid #fff;
 }
-.widget-user .box-footer {
+.widget-user .box-footer{
   padding-top: 30px;
 }
+.widget-user .box-footer.no-top-p{
+  padding-top: 10px;
+}
+
 .widget-user-2 .widget-user-header {
   padding: 20px;
   border-top-right-radius: 3px;
@@ -4728,7 +4738,10 @@ table.text-center th {
   }
 }
 
-
+.m-y {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 .m-t-15 {
   margin-top: 15px; 
 }

@@ -25,12 +25,52 @@
         <!-- Main content -->
         <section class="content">
           <?php if($user && $user->role=='ADMIN') { ?>
-          <div class="row">
+          <div class="row m-y">
             <div class="col-md-12">
               <button class="btn btn-primary pull-right">Add Item</button>
             </div>
           </div>
           <?php } ?>
+
+          <div class="row">
+            <?php if(sizeof($category->items) == 0){?>
+              <div class="col-md-12">
+                <p>There is no item available here</p>
+              </div>
+            <?php }?>
+          </div>
+          <div class="row">
+            <?php foreach ($category->items as $item) {?>
+            <div class="col-sm-6 col-md-3">
+              <div class="box box-widget widget-product">
+                <div class="widget-product-header bg-black" style="background: url('') center center;">
+                </div>
+                <div class="box-footer no-top-p">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h4>
+                        <a href='<?php echo base_url("index.php/home/category/$item->id") ?>'>
+                          <?php echo $item->title?>
+                        </a>
+                      </h4>
+                      <p>PKRs: <?php echo $item->price?></p>
+                      <p><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <button class="btn btn-danger btn-md">Add to Wishlist</button>
+                    </div>
+                    <div class="col-xs-6">
+                      <button class="btn btn-primary btn-md pull-right">Add to Cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?php }?>
+
+          </div>
         </section>
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
