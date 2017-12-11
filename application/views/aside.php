@@ -13,8 +13,8 @@
       <?php }?>
       <li class="header">CATEGORIES</li>
       <?php foreach ($this->categoryModel->getAll() as $c) { ?>
-      <li class="<?php if($c->title==$category) echo 'active'?>">
-        <a href='<?php echo base_url("index.php/home/category/$c->title")?>'>
+      <li class="<?php if($c->id==$selectedCategoryId) echo 'active'?>">
+        <a href='<?php echo base_url("index.php/home/category/$c->id")?>'>
           <span><?php echo $c->title?></span>
         </a>
       </li>

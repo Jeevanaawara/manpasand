@@ -12,11 +12,13 @@ class CategoryModel extends CI_Model {
 		return $query->result();
 	}
 
-	public function up($username, $password){
-		$query = $this->db->insert("user", array(
-			'username'=>$username,
-			'password'=>$password,
-			'role'=>'USER'));
+	public function get($id){
+		$query = $this->db->get_where("category", array('id' => $id));
+		return $query->row();
+	}
+
+	public function add($title){
+		$query = $this->db->insert("category", array('title'=>$title));
 		return $query;
 	}
 }

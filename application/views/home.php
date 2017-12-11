@@ -19,11 +19,23 @@
 
         <!-- Main content -->
         <section class="content">
-          <?php foreach ($categories as $category) {?>
-          <a href='<?php echo base_url("index.php/home/category/$category->title") ?>'>
-            <?php echo $category->title?>
-          </a>
-          <?php }?>
+          <?php if($user && $user->role=='ADMIN') { ?>
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-primary pull-right">Add Category</button>
+            </div>
+          </div>
+          <?php } ?>
+          <div class="row">
+            <?php foreach ($categories as $category) {?>
+            <div class="col-md-3">
+              <a href='<?php echo base_url("index.php/home/category/$category->id") ?>'>
+                <?php echo $category->title?>
+              </a>
+            </div>
+            <?php }?>          
+          </div>
+
         </section>
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
@@ -31,6 +43,5 @@
       </footer>
     </div><!-- ./wrapper -->
     <?php $this->view('common-scripts');?>
-    
   </body>
 </html>

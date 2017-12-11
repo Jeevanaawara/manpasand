@@ -14,11 +14,18 @@ class Home extends CI_Controller{
 		$this->load->view('home', $data);	
 	}
 
-	public function category($category){
+	public function category($id){
 		$data['user'] = $this->session->userdata('user');
-		$data['category'] = urldecode($category);
+		$data['selectedCategoryId'] = $id;
+		$data['category'] = $this->categoryModel->get($id);
 		$this->load->view('category', $data);	
 	}
+
+	// public function category($id){
+	// 	$data['user'] = $this->session->userdata('user');
+	// 	$data['category'] = $this->categoryModel->get($id);
+	// 	$this->load->view('category', $data);	
+	// }
 
 }
 ?>

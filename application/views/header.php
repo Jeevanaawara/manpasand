@@ -23,22 +23,24 @@
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
-            <li class="user-header">
-              
+            <li class="user-header">              
               <p>
-                Alexander Pierce - Web Developer
+                <?php echo $user->username?>
                 <small>Member since Nov. 2012</small>
+                <h2 class="">140 PKRs</h2> 
               </p>
             </li>
             <!-- Menu Body -->
+            <?php if($user && $user->role=='USER') {?>
             <li class="user-body">
               <div class="col-xs-6 text-center">
-                <a href="#">Cart</a>
+                <a href="#"><i class="fa fa-shopping"></i>Cart</a>
               </div>
               <div class="col-xs-6 text-center">
                 <a href="#">Wishlist</a>
               </div>
             </li>
+            <?php } ?>
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
