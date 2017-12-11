@@ -11,5 +11,13 @@ class SignModel extends CI_Model {
 		$query = $this->db->get_where("user", array('username'=>$username, 'password'=>$password));
 		return $query->row();
 	}
+
+	public function up($username, $password){
+		$query = $this->db->insert("user", array(
+			'username'=>$username,
+			'password'=>$password,
+			'role'=>'USER'));
+		return $query;
+	}
 }
 ?>
