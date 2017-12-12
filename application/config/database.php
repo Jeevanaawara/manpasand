@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'root',
+	'hostname' => 'mysql.manpasand.svc',
+	'username' => 'manpasanduser01',
+	'password' => 'manpasanduser01@db',
 	'database' => 'manpasand',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
